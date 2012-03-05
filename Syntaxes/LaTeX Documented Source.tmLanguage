@@ -14,7 +14,7 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>(?:^(%)    (\\begin){macrocode}|^(%)\s*(\\iffalse\b)(.*)$\n)</string>
+			<string>^(%)(?:    (\\begin){macrocode}|(&lt;\*)([A-Za-z0-9!\|]+|.)(&gt;))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -30,21 +30,21 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.tex.latex.dtx</string>
+					<string>entity.punctuation.selection.tex.latex.dtx</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.tex</string>
+					<string>entity.name.selection.tex.latex.dtx</string>
 				</dict>
 				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.tex.latex.dtx</string>
+					<string>entity.punctuation.selection.tex.latex.dtx</string>
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?:^(%)    (\\end){macrocode}|^(%)\s*(\\fi)\b)</string>
+			<string>^(%)(?:    (\\end){macrocode}|(&lt;/)(\4)(&gt;))</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -60,12 +60,17 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>comment.block.tex.latex.dtx</string>
+					<string>entity.punctuation.selection.tex.latex.dtx</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.tex</string>
+					<string>entity.name.selection.tex.latex.dtx</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>entity.punctuation.selection.tex.latex.dtx</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -83,17 +88,74 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
+							<string>entity.punctuation.selection.tex.latex.dtx</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
 							<string>entity.name.selection.tex.latex.dtx</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.punctuation.selection.tex.latex.dtx</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^(%)(&lt;[\*/]?(?:[A-Za-z0-9!\|]+|.)&gt;)</string>
+					<string>^(%)(&lt;[\*/]?)([A-Za-z0-9!\|]+|.)(&gt;)</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.be</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?:\{|\s*(\\begin)\{.+\})</string>
+					<key>name</key>
+					<string>meta.disabled.scopes</string>
 				</dict>
 				<dict>
 					<key>include</key>
 					<string>text.tex.latex</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(%).*\\(?:begin|end){macrocode}</string>
+			<key>name</key>
+			<string>invalid.illegal.markup.tex.latex.dtx</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.tex.latex.dtx</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.punctuation.selection.tex.latex.dtx</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.selection.tex.latex.dtx</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.punctuation.selection.tex.latex.dtx</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^(%)(&lt;[\*/]?)([A-Za-z0-9!\|]+|.)(&gt;)</string>
 		</dict>
 		<dict>
 			<key>match</key>
