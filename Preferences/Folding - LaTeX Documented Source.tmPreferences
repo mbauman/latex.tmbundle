@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Folding: LaTeX Documented Source</string>
+	<key>scope</key>
+	<string>text.tex.latex.dtx</string>
+	<key>settings</key>
+	<dict>
+		<key>foldingStartMarker</key>
+		<string>^%.*\\begin\{.*\}|^%&lt;\*.+&gt;|%.*\(fold\)\s*$</string>
+		<key>foldingStopMarker</key>
+		<string>^%.*\\end\{.*\}|^%&lt;/.+&gt;|%.*\(end\)\s*$</string>
+	</dict>
+	<key>uuid</key>
+	<string>F97CBF72-ADD9-4143-801C-CE6BD1056F49</string>
+</dict>
+</plist>
